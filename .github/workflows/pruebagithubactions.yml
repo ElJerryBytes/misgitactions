@@ -4,13 +4,13 @@ jobs:
   Explorar-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "El flujo de trabajo ha sido ejecutado en el evento: ${{ github.event_name }}"
-      - run: echo "El flujo de trabajo se está ejecutando en un servidor: ${{ runner.os }}"
+      - run: echo "El flujo de trabajo ha sido ejecutado en el evento:${{ github.event_name }}"
+      - run: echo "El flujo de trabajo se está ejecutando en un servidor:${{ runner.os }}"
       - name: Chequear archivos en el repositorio
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - run: echo "El repositorio ${{ github.repository }} ha sido clonado al runner."
       - run: echo "El flujo de trabajo está ahora listo para probar tu código en el runner."
       - name: Listar archivos en el repositorio
         run: |
           ls ${{ github.workspace }}
-      - run: echo "El estatus del trabajo es: ${{ job.status }}"
+      - run: echo "El estatus del trabajo es:${{ job.status }}"
